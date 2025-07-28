@@ -1,0 +1,41 @@
+﻿body {
+}
+/* app.css - default Blazor styling */
+
+html, body {
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #222;
+}
+
+a {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0.5rem 0;
+    font-weight: 600;
+}
+
+p {
+    margin: 1rem 0;
+}
+
+main {
+    padding: 2rem;
+}
+
+footer {
+    margin-top: 4rem;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
+}
