@@ -1,0 +1,16 @@
+﻿@foreach(string tech in techlist)
+{
+	<div>@tech</div>
+}
+@code {
+	private List<string> techlist = new List<string>()
+	{
+         "C#",
+        "Blazor",
+        "ASP.NET Core",
+        "GitHub",
+        "Docker",
+        "Proxmox",
+        "SQL Server"
+	};
+}
