@@ -46,3 +46,11 @@ footer {
     gap: 1.5rem;
     margin-top: 1rem;
 }
+
+.about-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
