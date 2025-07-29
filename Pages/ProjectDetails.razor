@@ -1,0 +1,23 @@
+﻿@page "/projects/{Slug}"
+
+
+@code 
+{
+	[Parameter] public string Slug { get; set; }
+
+	private string Title;
+	private string Description;
+	private string[] TechStack;
+
+	protected override void OnInitialized()
+	{
+		// Mock project data — will replace later with actual project model 
+		// This just gives me a working skelton
+		var projects = new Dictionary<string, (string Title, string Description, string[] TechStack)>
+		{
+			["jamf-api-tool"] = ("Jamf API Tool", "Automates Jamf device lookups and config updates.", new[] { "C#", ".NET", "Jamf API" }),
+			["knowledge-center"] = ("Knowledge Center", "Track, tag, and organize technical knowledge.", new[] { "C#", "SQL", "WinForms" }),
+			["seinfeld-api"] = ("Seinfeld API", "An API of quotes and episode data from Seinfeld.", new[] { "ASP.NET Core", "SQL Server" })
+		};
+	}
+}
