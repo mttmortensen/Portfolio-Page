@@ -19,5 +19,18 @@
 			["knowledge-center"] = ("Knowledge Center", "Track, tag, and organize technical knowledge.", new[] { "C#", "SQL", "WinForms" }),
 			["seinfeld-api"] = ("Seinfeld API", "An API of quotes and episode data from Seinfeld.", new[] { "ASP.NET Core", "SQL Server" })
 		};
+
+		if(projects.TryGetValue(Slug.ToLower(), out var project))
+		{
+			Title = project.Title;
+			Description = project.Description;
+			TechStack = project.TechStack;
+		}
+		else
+		{
+			Title = "Project Not Found";
+			Description = "We couldn't find that project.";
+			TechStack = Array.Empty<string>();
+		}
 	}
 }
