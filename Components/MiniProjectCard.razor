@@ -1,0 +1,10 @@
+﻿<div class="mini-card">
+	<h4>@Title</h4>
+	<p>@Description</p>
+	<NavLink href="@ProjectLink" class="project-link">View Project</NavLink>
+</div>
+@code {
+	[Parameter] public string Title { get; set; }
+	[Parameter] public string Description { get; set; }
+	[Parameter] public string ProjectLink { get; set; }
+}
