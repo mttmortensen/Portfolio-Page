@@ -1,5 +1,22 @@
 ﻿@page "/projects/{Slug}"
 
+<h2>@Title</h2>
+<p>@Description</p>
+
+
+@if (TechStack.Length > 0)
+{
+	<h4>Tech Stack</h4>
+	<ul>
+		@foreach(var tech in TechStack)
+		{
+			<li>
+				@tech
+			</li>	
+		}
+
+	</ul>
+}
 
 @code 
 {
