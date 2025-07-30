@@ -1,7 +1,7 @@
 ﻿using Portfolio_Page.Models;
 using Portfolio_Page.Services;
 
-namespace Portfolio_Page.Components
+namespace Portfolio_Page.Controllers
 {
     public class ProjectController
     {
@@ -12,8 +12,8 @@ namespace Portfolio_Page.Components
             _service = service;
         }
 
-        public List<ProjectModel> GetAll() => _service.GetAllProjects();
+        public async Task<List<ProjectModel>> GetAll() => await _service.GetAllProjects();
 
-        public ProjectModel? GetBySlug(string slug) => _service.GetProjectBySlug(slug);
+        public async Task<ProjectModel>? GetBySlug(string slug) => await _service.GetProjectBySlug(slug);
     }
 }
