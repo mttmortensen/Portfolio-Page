@@ -1,15 +1,29 @@
 ﻿using Portfolio_Page.Models;
+using Portfolio_Page.Services;
+using System.Net.Http.Json;
+using System.Threading.Tasks;
+using static System.Net.WebRequestMethods;
 
 namespace Portfolio_Page.Services
 {
     public class ProjectServices
     {
-        private readonly List<ProjectModel> _mockProjets = new() { };
+        private readonly HttpClient? _client;
 
-        public List<ProjectModel> GetAllProjects() => _mockProjets;
+        private List<ProjectModel>? _cachedProjects;
 
-        public ProjectModel GetProjectBySlug(string slug) =>
-            _mockProjets.First(p => p.Slug.Equals(slug, StringComparison.OrdinalIgnoreCase));
+        public ProjectServices(HttpClient client)
+        {
+            _client = client;
+        }
 
+        public async Task<List<ProjectModel>> GetAllProjects() =>
+            _cachedProjects = await _client.GetFromJsonAsync<List<ProjectModel>>("data/projects.json");
+
+        public async Task<ProjectModel> GetProjectBySlug(string slug) 
+        {
+            _cachedProjects = await _client.GetFromJsonAsync<List<ProjectModel>>("data/projects.json");
+            return _cachedProjects.FirstOrDefault(p => p.Slug == slug);
+        }
     }
 }
