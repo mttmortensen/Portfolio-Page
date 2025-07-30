@@ -6,5 +6,10 @@ namespace Portfolio_Page.Services
     {
         private readonly List<ProjectModel> _mockProjets = new() { };
 
+        public List<ProjectModel> GetAllProjects() => _mockProjets;
+
+        public ProjectModel GetProjectBySlug(string slug) =>
+            _mockProjets.First(p => p.Slug.Equals(slug, StringComparison.OrdinalIgnoreCase));
+
     }
 }
