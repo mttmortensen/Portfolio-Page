@@ -1,7 +1,7 @@
 ﻿using Portfolio_Page.Models;
 using System.Net.Http.Json;
 
-namespace Portfolio_Page.Services
+namespace Portfolio_Page.Services.Core
 {
     public class ProjectServices
     {

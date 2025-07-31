@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Portfolio_Page.Controllers;
-using Portfolio_Page.Services;
+using Portfolio_Page.Services.Core;
 using System.Net.Http;
 
 namespace Portfolio_Page

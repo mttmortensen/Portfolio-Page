@@ -2,7 +2,7 @@
 using System.Net.Http.Json;
 using System.Text.Json;
 
-namespace Portfolio_Page.Services
+namespace Portfolio_Page.Services.Core
 {
     public class BlogServices
     {
