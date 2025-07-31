@@ -1,8 +1,5 @@
 ﻿using Portfolio_Page.Models;
-using Portfolio_Page.Services;
 using System.Net.Http.Json;
-using System.Threading.Tasks;
-using static System.Net.WebRequestMethods;
 
 namespace Portfolio_Page.Services
 {
