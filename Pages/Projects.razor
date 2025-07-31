@@ -4,12 +4,21 @@
 <SectionHeader Title="Projects" />
 
 <div class="projects-grid">
-    @foreach(ProjectModel project in projects)
+    @if (projects?.Any() == true)
     {
-        <MiniProjectCard Title="@project.Title"
-                         Description="@project.Description"
-                         ProjectLink="/projects/jamf-api-tool" />
+        @foreach (ProjectModel project in projects)
+        {
+            <MiniProjectCard Title="@project.Title"
+                             Description="@project.Description"
+                             ProjectLink="@($"/projects/{project.Slug}")" />
+
+        }
     }
+    else
+    {
+        <p>No projects found or are currently loading...</p>   
+    }
+
 
 </div>
 
