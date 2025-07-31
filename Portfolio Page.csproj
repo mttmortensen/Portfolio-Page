@@ -12,11 +12,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Content Include="wwwroot\data\**\*.json">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
+		<Content Update="wwwroot\data\**\*">
+			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
 		</Content>
 	</ItemGroup>
+
 
 	<ItemGroup>
 		<Folder Include="Services\Auth\" />
