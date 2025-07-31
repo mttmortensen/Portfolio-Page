@@ -22,7 +22,7 @@ namespace Portfolio_Page
                 BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
             });
 
-            // Register your services as SCOPED (not singleton!)
+            // Registering services as SCOPED (not singleton!)
             builder.Services.AddScoped<ProjectServices>();
             builder.Services.AddScoped<ProjectController>(); // optional
 
