@@ -1,53 +1,32 @@
-﻿@page "/projects/{Slug}"
+﻿@inject ProjectController ProjectController
+@page "/projects/{Slug}"
 
-<h2>@Title</h2>
-<p>@Description</p>
+<h2>@project?.Title</h2>
+<p>@project?.Description</p>
 
-
-@if (TechStack.Length > 0)
+@if (project?.TechStack != null && project.TechStack.Count > 0)
 {
-	<h4>Tech Stack</h4>
-	<ul>
-		@foreach(var tech in TechStack)
-		{
-			<li>
-				@tech
-			</li>	
-		}
-
-	</ul>
+    <h4>Tech Stack</h4>
+    <ul>
+        @foreach (var tech in project.TechStack)
+        {
+            <li>@tech</li>
+        }
+    </ul>
+    <a href="@project.LiveURL">Check out the project</a>
+    <a href="@project.GHRepoURL">GitHub Repo</a>
+    <p>@project.LongDescription</p>
 }
+
 
 @code 
 {
 	[Parameter] public string Slug { get; set; }
 
-	private string Title;
-	private string Description;
-	private string[] TechStack;
+	private ProjectModel? project; 
 
-	protected override void OnInitialized()
+	protected override async Task OnInitializedAsync()
 	{
-		// Mock project data — will replace later with actual project model 
-		// This just gives me a working skelton
-		var projects = new Dictionary<string, (string Title, string Description, string[] TechStack)>
-		{
-			["jamf-api-tool"] = ("Jamf API Tool", "Automates Jamf device lookups and config updates.", new[] { "C#", ".NET", "Jamf API" }),
-			["knowledge-center"] = ("Knowledge Center", "Track, tag, and organize technical knowledge.", new[] { "C#", "SQL", "WinForms" }),
-			["seinfeld-api"] = ("Seinfeld API", "An API of quotes and episode data from Seinfeld.", new[] { "ASP.NET Core", "SQL Server" })
-		};
-
-		if(projects.TryGetValue(Slug.ToLower(), out var project))
-		{
-			Title = project.Title;
-			Description = project.Description;
-			TechStack = project.TechStack;
-		}
-		else
-		{
-			Title = "Project Not Found";
-			Description = "We couldn't find that project.";
-			TechStack = Array.Empty<string>();
-		}
+		project = await ProjectController.GetBySlug(Slug);
 	}
 }
