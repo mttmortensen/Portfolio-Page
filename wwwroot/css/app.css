@@ -1,17 +1,33 @@
-﻿body {
+﻿/* Define navy accent for subtle highlights */
+:root {
+    --accent-color: #4262a5;
+    --section-header-color: #3ba9f4;
+    --card-bg: #4bb6f8;
 }
-/* app.css - default Blazor styling */
 
+/* Base layout reset + font */
 html, body {
-    font-family: system-ui, sans-serif;
+    font-family: 'Segoe UI', system-ui, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fff;
-    color: #222;
+    background-color: #0d1117; /* dark mode */
+    color: #ffffff;
 }
 
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    margin: 0.5rem 0;
+    font-weight: 600;
+}
+
+/* Paragraphs */
+p {
+    margin: 1rem 0;
+}
+
+/* Links */
 a {
-    color: #0366d6;
+    color: var(--accent-color);
     text-decoration: none;
 }
 
@@ -19,38 +35,17 @@ a {
         text-decoration: underline;
     }
 
-h1, h2, h3, h4, h5, h6 {
-    margin: 0.5rem 0;
-    font-weight: 600;
-}
-
-p {
-    margin: 1rem 0;
-}
-
+/* Main body padding */
 main {
     padding: 2rem;
+    padding-bottom: 4rem;
 }
 
+/* Footer */
 footer {
     margin-top: 4rem;
     padding: 1rem;
     text-align: center;
     font-size: 0.9rem;
     color: #888;
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1rem;
-}
-
-.about-container {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    font-size: 1.1rem;
-    line-height: 1.6;
 }
