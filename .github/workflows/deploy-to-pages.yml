@@ -24,6 +24,8 @@ jobs:
       - name: Deploy wwwroot to deploy branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: deploy              # This is the target branch
-          folder: publish/wwwroot     # This is the output folder
-          clean: true                 # Clears the deploy branch before writing
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          branch: deploy
+          folder: publish/wwwroot
+          clean: true
+
