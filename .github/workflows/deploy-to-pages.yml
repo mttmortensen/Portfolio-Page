@@ -1,0 +1,29 @@
+name: Build and Deploy Blazor WASM to Cloudflare Pages
+
+on:
+  push:
+    branches:
+      - main  # This triggers the workflow when you push to main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'  # Change to 7.0.x if you're using .NET 7
+
+      - name: Publish Blazor WASM
+        run: dotnet publish -c Release -o publish
+
+      - name: Deploy wwwroot to deploy branch
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: deploy              # This is the target branch
+          folder: publish/wwwroot     # This is the output folder
+          clean: true                 # Clears the deploy branch before writing
