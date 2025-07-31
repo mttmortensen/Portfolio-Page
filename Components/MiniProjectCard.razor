@@ -1,7 +1,9 @@
-﻿<div class="mini-card">
-	<h4>@Title</h4>
-	<p>@Description</p>
-	<NavLink href="@ProjectLink" class="project-link">View Project</NavLink>
+﻿<div class="card h-100 shadow-sm border-0 rounded-4">
+    <div class="card-body">
+        <h5 class="card-title fw-bold">@Title</h5>
+        <p class="card-text text-secondary">@Description</p>
+        <NavLink href="@ProjectLink" class="btn btn-sm btn-outline-primary mt-2">View Project</NavLink>
+    </div>
 </div>
 @code {
 	[Parameter] public string Title { get; set; }
