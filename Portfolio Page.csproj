@@ -12,12 +12,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Content Update="wwwroot\appsettings.json">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
-		<Content Update="wwwroot\data\projects.json">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
+		<!-- Remove all CopyToOutputDirectory blocks -->
 	</ItemGroup>
 
 	<ItemGroup>
