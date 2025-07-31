@@ -5,12 +5,12 @@
 {
     <div class="container py-5">
         <h2 class="display-5 fw-bold mb-3">@project.Title</h2>
-        <p class="lead text-secondary mb-4">@project.Description</p>
+        <p class="lead text-white mb-5">@project.Description</p>
 
         @if (project.TechStack?.Count > 0)
         {
             <h4 class="fw-semibold mb-3">Tech Stack</h4>
-            <div class="d-flex flex-wrap gap-2 mb-4">
+            <div class="d-flex flex-wrap gap-2 mb-5">
                 @foreach (var tech in project.TechStack)
                 {
                     <span class="badge rounded-pill bg-secondary px-3 py-2 fs-6">@tech</span>
@@ -18,7 +18,7 @@
             </div>
         }
 
-        <div class="mb-4 d-flex flex-wrap gap-3">
+        <div class="mb-5 d-flex flex-wrap gap-3">
             @if (!string.IsNullOrWhiteSpace(project.LiveURL))
             {
                 <a href="@project.LiveURL" target="_blank" class="btn btn-primary">🔗 Live Project</a>
@@ -26,14 +26,16 @@
 
             @if (!string.IsNullOrWhiteSpace(project.GHRepoURL))
             {
-                <a href="@project.GHRepoURL" target="_blank" class="btn btn-outline-dark">💻 GitHub Repo</a>
+                <a href="@project.GHRepoURL" target="_blank" class="btn btn-outline-light">
+                    💻 GitHub Repo
+                </a>
             }
         </div>
 
         @if (!string.IsNullOrWhiteSpace(project.LongDescription))
         {
             <div class="mt-4" style="max-width: 800px;">
-                <p class="text-body">@project.LongDescription</p>
+                <p class="text-white">@project.LongDescription</p>
             </div>
         }
     </div>
