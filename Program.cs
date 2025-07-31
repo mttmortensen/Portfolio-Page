@@ -25,7 +25,12 @@ namespace Portfolio_Page
             // Registering services as SCOPED (not singleton!)
             builder.Services.AddScoped<ProjectServices>();
             builder.Services.AddScoped<BlogServices>();
-            builder.Services.AddScoped<ProjectController>(); // optional
+            builder.Services.AddScoped<SocialLinkServices>();
+
+            // Optional
+            builder.Services.AddScoped<BlogController>(); 
+            builder.Services.AddScoped<ProjectController>();
+            builder.Services.AddScoped<SocialLinkController>(); 
 
             await builder.Build().RunAsync();
         }
