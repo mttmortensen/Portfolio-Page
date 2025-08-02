@@ -1,0 +1,17 @@
+[
+    {
+        "Platform": "GitHub",
+        "URL": "https://github.com/mttmortensen",
+        "Icon": "bi bi-github"
+    },
+    {
+        "Platform": "LinkedIn",
+        "URL": "https://www.linkedin.com/in/matt-mortensen/",
+        "Icon": "bi bi-linkedin"
+    },
+    {
+        "Platform": "Email",
+        "URL": "mailto:mortensensm1205@gmail.com",
+        "Icon":  "bi bi-envelope"
+    }
+]

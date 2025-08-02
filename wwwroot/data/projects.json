@@ -1,0 +1,42 @@
+[
+    {
+        "Title": "Knowledge Center Web",
+        "Slug": "knowledge-center-fe",
+        "Description": "The Knowledge-Center front-end is a clean, mobile-first interface for tracking learning progress through organized domains, knowledge nodes, and log entries with seamless navigation and inline interaction.",
+        "LongDescription": "The front-end of the Knowledge-Center is a clean, mobile-first interface that lets users track their learning across domains using structured units called Knowledge Nodes. Each node contains logs, tags, confidence levels, and a status indicator to capture growth over time. Users can add, view, and update entries directly from the UI, which stacks content vertically for readability on all screen sizes. The layout emphasizes simplicity and speed�filtering, inline editing, and nested views make navigating between domains, nodes, and logs seamless. In demo mode, the front-end simulates full functionality with read-only mock data.",
+        "TechStack": [ "HTML", "CSS", "TypeScript", "JavaScript" ],
+        "ImageURL": "",
+        "GHRepoURL": "https://github.com/mttmortensen/Knowledge-Center-Web",
+        "LiveURL": "https://kc.mortensens.xyz"
+    },
+    {
+        "Title": "Knowledge Center API",
+        "Slug": "knowledge-center-api",
+        "Description": "The Knowledge-Center API is a secure, RESTful backend for managing structured learning data across domains, nodes, logs, and tags.",
+        "LongDescription": "The Knowledge-Center API is a lightweight, token-protected REST API built to support structured knowledge management across domains, knowledge nodes, logs, and tags. Each controller follows a clear, CRUD-based architecture with additional support for nested data relationships (e.g., retrieving logs for a specific Knowledge Node or Knowledge Nodes within a Domain). The API handles validation, rate limiting, and demo mode emulation, making it suitable for both production and sandbox environments. Centralized service layers manage business logic, while DTOs ensure clean data transfer between the backend and front-end. The API is designed for easy extension and secure, maintainable operation, whether self-hosted or integrated into a larger system.",
+        "TechStack": [ "C#", "ASP.NET", "EF Core (SQL Access)", "SQL Server (DB)", "JWT-Based Authentication", "Swagger", "ADO.NET" ],
+        "ImageURL": "",
+        "GHRepoURL": "https://github.com/mttmortensen/Knowledge-Center-API",
+        "LiveURL": "https://api.mortensens.xyz/kc/swagger/"
+    },
+    {
+        "Title": "Seinfeld API",
+        "Slug": "seinfeld-api",
+        "Description": "The Seinfeld API is a RESTful service that organizes and manages episodes and character quotes from the sitcom Seinfeld, allowing users to retrieve, create, update, and delete structured data about the show.",
+        "LongDescription": "The Seinfeld API is a RESTful service designed to catalog and manage episodes and memorable quotes from the iconic sitcom Seinfeld. Built with a layered architecture in ASP.NET Core, it provides endpoints to retrieve, create, update, and delete both episodes and quotes. Each episode includes details such as title, season, episode number, and air date, and is associated with multiple quotes, each attributed to a specific character. The API ensures clean separation of concerns through DTOs and service layers, offering flexible quote association via either direct episode ID or title/season resolution. It serves as a searchable, structured archive of Seinfeld�s most iconic moments�ideal for fans, developers, or content platforms looking to integrate classic TV content into their applications.",
+        "TechStack": [ "C#", "ASP.NET", "SQL Server", "Swagger", "JWT-Based Authentication" ],
+        "ImageURL": "",
+        "GHRepoURL": "https://github.com/mttmortensen/SeinfeldAPI",
+        "LiveURL": "https://api.mortensens.xyz/seinfeld/swagger/"
+    },
+    {
+        "Title": "Swagger Hub",
+        "Slug": "swagger-hub",
+        "Description": "Swagger Hub is a self-hosted Blazor dashboard that organizes and displays categorized API links in a clean, card-based layout for easy access to internal Swagger documentation.",
+        "LongDescription": "Swagger Hub is a self-hosted Blazor dashboard that visually organizes internal APIs into clean, card-based groups for easier discovery and access across a development team or organization. It displays categorized API endpoints using Bootstrap-styled components, each linking directly to a Swagger UI instance for that service. Designed for clarity and extensibility, Swagger Hub leverages simple C# models (ApiGroup, ApiLink) to dynamically render categorized sections, making it easy to manage and showcase both public and private APIs. Hosted securely behind a reverse proxy with SSL, the project serves as a lightweight, no-frills portal for centralized API documentation access.",
+        "TechStack": [ "C#", "Blazor WASM", "Bootstrap CSS" ],
+        "ImageURL": "",
+        "GHRepoURL": "https://github.com/mttmortensen/SwaggerHub",
+        "LiveURL": "https://hub.mortensens.xyz"
+    }
+]
