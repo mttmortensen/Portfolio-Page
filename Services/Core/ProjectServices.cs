@@ -15,11 +15,11 @@ namespace Portfolio_Page.Services.Core
         }
 
         public async Task<List<ProjectModel>> GetAllProjects() =>
-            _cachedProjects = await _client.GetFromJsonAsync<List<ProjectModel>>("data/projects.json");
+            _cachedProjects = await _client.GetFromJsonAsync<List<ProjectModel>>("/data/projects.json");
 
         public async Task<ProjectModel> GetProjectBySlug(string slug) 
         {
-            _cachedProjects = await _client.GetFromJsonAsync<List<ProjectModel>>("data/projects.json");
+            _cachedProjects = await _client.GetFromJsonAsync<List<ProjectModel>>("/data/projects.json");
             return _cachedProjects.FirstOrDefault(p => p.Slug == slug);
         }
     }
