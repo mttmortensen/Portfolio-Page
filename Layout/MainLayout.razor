@@ -3,16 +3,32 @@
 <div class="main-layout bg-dark text-white min-vh-100">
 
     <header class="sticky-top bg-dark border-bottom border-secondary shadow-sm">
-        <div class="container d-flex justify-content-between align-items-center py-3">
-            <NavLink href="/" class="h4 fw-bold text-white text-decoration-none mb-0">Matt Mortensen</NavLink>
-            <nav class="d-flex gap-3">
-                <NavLink href="/" class="nav-link px-2 text-light" activeClass="fw-semibold text-accent" Match="NavLinkMatch.All">Home</NavLink>
-                <NavLink href="/about" class="nav-link px-2 text-light" activeClass="fw-semibold text-accent">About</NavLink>
-                <NavLink href="/projects" class="nav-link px-2 text-light" activeClass="fw-semibold text-accent">Projects</NavLink>
-                <NavLink class="nav-link px-2 text-light disabled" activeClass="fw-semibold text-accent">Blog (Coming Soon)</NavLink>
+        <nav class="navbar navbar-expand-md navbar-dark container px-3 py-3">
+            <!-- Left: Brand -->
+            <a class="navbar-brand text-light text-decoration-none" href="/">Matt Mortensen</a>
 
-            </nav>
-        </div>
+            <!-- Right: Hamburger + Nav Links -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+                <ul class="navbar-nav gap-2">
+                    <li class="nav-item">
+                        <NavLink href="/" class="nav-link text-light" activeClass="fw-semibold text-accent">Home</NavLink>
+                    </li>
+                    <li class="nav-item">
+                        <NavLink href="/about" class="nav-link text-light" activeClass="fw-semibold text-accent">About</NavLink>
+                    </li>
+                    <li class="nav-item">
+                        <NavLink href="/projects" class="nav-link text-light" activeClass="fw-semibold text-accent">Projects</NavLink>
+                    </li>
+                    <li class="nav-item">
+                        <NavLink href="/blog" class="nav-link text-light disabled" activeClass="fw-semibold text-accent">Blog (Coming Soon)</NavLink>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </header>
 
     <main class="container py-4 text-white">
